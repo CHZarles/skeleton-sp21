@@ -55,6 +55,7 @@ public class LinkedListDeque<T> implements Deque<T> {
             return;
         }
         Node<T> oldTail = sentinel.prev;
+
         newNode.prev = oldTail;
         oldTail.next = newNode;
         newNode.next = sentinel;
@@ -107,6 +108,7 @@ public class LinkedListDeque<T> implements Deque<T> {
         return val;
     }
 
+    @Override
     public T get(int index) {
         if (isEmpty() ||  index < 0 || index >= size)
             return null;
@@ -118,6 +120,7 @@ public class LinkedListDeque<T> implements Deque<T> {
         return p.first;
     }
 
+    @Override
     public int size() {
         return size;
     }
